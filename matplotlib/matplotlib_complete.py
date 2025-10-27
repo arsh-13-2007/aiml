@@ -16,7 +16,7 @@ y = x*x
 
 # plt.plot(x, y, linewidth=2, color='r', marker='o', linestyle='--')# this is use to draw line through points 
 
-# in linestyle we give may pattern like (-','--','-.',':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted )
+# # in linestyle we give may pattern like (-','--','-.',':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted )
 # plt.show()  # to print we use show command 
 
 

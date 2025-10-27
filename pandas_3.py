@@ -6,7 +6,7 @@ import pickle
 
 # numpy previous lecture revision :- 
 
-# arr = np.arange(0 , 20 , step= 2 ).reshape(2, 5) 
+arr = np.arange( 0 , 20 , step = 2 ).reshape(2, 5 )
 # print( arr )
 # print( arr.size)
 # print( arr.shape)
@@ -18,8 +18,8 @@ import pickle
 # need to revise again 
 
 
-
-# arr2  = np.random.rand(3, 3) # random number between 0 and 1 
+# print( arr[0 : 2 , 3: 5 ])  # first represents rows and second represents columns 
+# arr2  = np.random.rand(3, 3) # random number between 0 and 1 ṇ
 # print( arr2)
 # arr2 = np.random.randint( 2 ,20 , ( 3, 4))
 # print(arr2)
@@ -31,7 +31,7 @@ import pickle
 # print( arr5)
 
 # pandas_ 1 lecture revision 
-# df = pd.DataFrame(np.arange(2, 20).reshape(3,6) , index=( 'row1','row2','row3'), columns = ( "column1", "column2", "column3" , "column4","column5", "column6"))
+df = pd.DataFrame(np.arange(2, 20).reshape(3,6) , index=( 'row1','row2','row3'), columns = ( "column1", "column2", "column3" , "column4","column5", "column6"))
 # print( df ) 
 # print( type( df)) #output = <class 'pandas.core.frame.DataFrame'>
 
@@ -44,15 +44,21 @@ import pickle
 # print(np.nan) # use to give null value in numpy in python 
 # need to revise again 
 
-# print ( df.loc[:,:].values) # it convert it into array 
+# print ( df.loc[:,:].values) # it convert it into array                                             # important 
+
 # print( df.loc['row2'])
+
+# loc is use to print particular row you can check in above example also 
+
+
 # print(df["column2"].unique)
+print(df["column2"].value_count())
 
 # pandas_2 lecture revision
 
 # data = pd.read_csv("test.csv")
 # print(data)
-# print( data . info())
+# print( data . info())   
 # print (data.describe())
 # print( data["col2" ])
 # print( data["col2" ][2])
@@ -131,33 +137,33 @@ which is a human-readable, text-based standard used to store and exchange struct
 
 # reading excel file 
 
-df_excel = pd.read_excel('excel_sheet.xlsx ')
-# print(df_excel.head())
+# df_excel = pd.read_excel('excel_sheet.xlsx ')
+# # print(df_excel.head())
 
-# reading xml file 
-"""An XML file is a document written in Extensible Markup Language (XML),
-a markup language designed to store and transport data"""
-
-
-# pickling 
-# ( very very important in point of machine learning  when we start makeing machine learning model )
-"""Pickling → Process of converting a Python object into a byte stream (so it can be saved to a file or sent over a network).
-
-Unpickling → Process of converting the byte stream back into the original Python object.""" 
-
-df_excel.to_pickle('df_excel')  # it is use to save the data to disk 
-data = pd.read_pickle('df_excel')
-print( data )
+# # reading xml file 
+# """An XML file is a document written in Extensible Markup Language (XML),
+# a markup language designed to store and transport data"""
 
 
-import pickle
+# # pickling 
+# # ( very very important in point of machine learning  when we start makeing machine learning model )
+# """Pickling → Process of converting a Python object into a byte stream (so it can be saved to a file or sent over a network).
 
-# Pickling
-data = {"name": "Arsh", "age": 21}
-with open("data.pkl", "wb") as f:
-    pickle.dump(data, f) 
-# Unpickling
-with open("data.pkl", "rb") as f:
-    loaded_data = pickle.load(f)
+# Unpickling → Process of converting the byte stream back into the original Python object.""" 
 
-print(loaded_data)  # {'name': 'Arsh', 'age': 21}
+# df_excel.to_pickle('df_excel')  # it is use to save the data to disk 
+# data = pd.read_pickle('df_excel')
+# print( data )
+
+
+# import pickle
+
+# # Pickling
+# data = {"name": "Arsh", "age": 21}
+# with open("data.pkl", "wb") as f:
+#     pickle.dump(data, f) 
+# # Unpickling
+# with open("data.pkl", "rb") as f:
+#     loaded_data = pickle.load(f)
+
+# print(loaded_data)  # {'name': 'Arsh', 'age': 21}

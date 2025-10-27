@@ -13,7 +13,7 @@ from io import StringIO
 # print( df.head(3))
 # print( df.tail(2))
 # print( df.iloc[0:2,2:5]) 
-# print( df.loc[:,:].values)
+# print( df.loc[:,:].values)        # use to convert df into array 
 # print( df.loc['row1'])
 # print(df["column2"].unique)
 # print( df.isnull().sum())

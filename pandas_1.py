@@ -7,9 +7,9 @@ import numpy as np
 import pandas as pd 
 
 # prototype: pd.DataFrame(data=None, index=None, columns=None, dtype=None)
-df = pd.DataFrame(np.arange(0,20).reshape(5,4), index=['row1','row2','row3','row4','row5'] ,columns=["column1","column2","column3","column4"])
-
-
+df = pd.DataFrame(data = np.arange(0,20).reshape(5,4), index=['row1','row2','row3','row4','row5'] ,columns=["column1","column2","column3","column4"])
+print( df) 
+print(df.iloc[2:4,0 :3]) # this is use top indexing in pyhton pandas 
 # print( df.head(2)) # head is use to print first n line of dataframe 
 # print( df.tail(3)) # tail is use to print from last n line of dataframe 
 # print(df) # it use to print  full dataframe 

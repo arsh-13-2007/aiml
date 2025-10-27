@@ -29,7 +29,7 @@ arr= np.array([[1,2,3,4,5],
 # arr = np.arange( 0 , 10 , step = 2) 
 # print( arr)
 
-arr10 = np.linspace(3,10 , 10,  dtype = int   ).reshape( 2,5)# in this example 1 is starting point and 2 is ending point 
+arr10 = np.linspace(3,10 , 10,  dtype = int).reshape( 2,5)# in this example 1 is starting point and 2 is ending point 
 print( arr10)
 # print( arr.shape)
 
@@ -80,7 +80,3 @@ print( arr)
 
 arr = np.random.randint( low = 4, high= 6, size = (3, 3))  # random integer between 4 and 6  remind  that 6 excluded
 print(arr)
-
-
-
- 
