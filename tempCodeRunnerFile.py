@@ -1,2 +1,3 @@
-plt.boxplot( data , vert= True, patch_artist= True )
-# plt.show() 
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt 

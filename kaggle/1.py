@@ -1,0 +1,1 @@
+# every think is given in kagle statement read this properly and under stand the question problem statement 
