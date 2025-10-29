@@ -37,7 +37,7 @@ plt.show()
        # main target 
       # firslty we learn how to handle missing value inside dataset
 
-sns.boxplot(x='Pclass' , y='Age' ,data=data )
+sns.boxplot(x='Pclass' , y='Age' ,data=data )   # using box we able to find average values of age and pclass 
 plt.show()
 
 
