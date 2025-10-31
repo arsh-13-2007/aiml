@@ -15,7 +15,7 @@ pipe = Pipeline([
 # pipe = Pipeline( steps)  # pipeline is sequence apply list of transforms and a final estimator 
 set_config( display='diagram')
 print( pipe)
-X, y = make_classification(return_X_y =True , n_samples=1000 )
+X, y = make_classification(return_X_y =True , n_samples=1000 , n_features=20  )
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
 print(f"Shape of X_train: {X_train.shape}")
