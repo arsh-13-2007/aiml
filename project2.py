@@ -5,7 +5,7 @@ import plotly.express  as px
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder , StandardScaler
 from sklearn.impute import SimpleImputer
-from sklearn.metrics import  mean_squared_error
+from sklearn.metrics import  r2_score
 from sklearn.linear_model import LinearRegression
 data = pd.read_csv("housing_price_dataset.csv"  , usecols=['SquareFeet' , 'Price'])
 print(data.shape)
@@ -18,11 +18,15 @@ def train():
     df= data
     X = data[['SquareFeet']]
     y = data['Price']
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=10)
     model= LinearRegression()
     model.fit(X_train , y_train)
+    y_pred = model.predict(X_test)
+    accuracy = r2_score( y_pred , y_test)
+    print("  " , "accuracy :" , accuracy)
     return model
 
+# we use differnt differnt model to increase accraucy like ( rf , dt  etc)
 
 def main():
     st.title("linear regression house prediction app")
@@ -33,7 +37,7 @@ def main():
         predicted_price = model.predict([[size]])
         st.success(f"Estimated price: {round(predicted_price[0], 2)}")
         df = data
-
+  
         fig = px.scatter(df,x="SquareFeet",y="Price",title="Square Feet vs House Price")
 
         fig.add_scatter(x=[size],y=[predicted_price[0]],
