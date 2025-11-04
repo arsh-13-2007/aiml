@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from  sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import precision_score
 from sklearn.preprocessing import  OneHotEncoder
 from sklearn.metrics import accuracy_score, classification_report
 Lr = LogisticRegression()
@@ -39,5 +40,5 @@ classifier_regressor.fit(X_train   , y_train)
 print( classifier_regressor.best_params_)
 print( classifier_regressor.best_score_)
 y_pred= classifier_regressor.predict(X_test)
-accuracy = accuracy_score( y_pred , y_test)
-print( accuracy)
+precision = precision_score( y_pred , y_test)
+print( precision)

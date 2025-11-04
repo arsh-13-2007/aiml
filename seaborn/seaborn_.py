@@ -17,7 +17,7 @@ print( df.head())
 # # it calculated dependency to other means how much one depend to other 
 
 # print(df.corr(numeric_only=True))
-# sns.heatmap(df.corr(numeric_only=True))  # correlation is only calculated for int and float 
+# sns.heatmap(df.corr(numeric_only=True) , annot = True )  # correlation is only calculated for int and float 
 # plt.show ()
 
 

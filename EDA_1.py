@@ -53,4 +53,3 @@ def function ( cols):
             return 24
     else: 
         return Age
-     
