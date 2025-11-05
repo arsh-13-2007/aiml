@@ -24,5 +24,13 @@ pca = PCA(n_components=2)  # i reduce  30 dimemsion into 2 dimensions using pca
 
 data_pca = pca.fit_transform(data_scaled)
 print( data_pca)  #  WHOLE 30 DIMENSION  conbined into only 2 feature 
-print( data_pca.shape )
-print( data_scaled.shape)
+print( data_pca.shape ) # output (569, 2)
+print( data_scaled.shape) # output (569, 30)
+
+
+print(pca.explained_variance_)
+
+plt.scatter(data_pca[:,0] , data_pca[: , 1 ], c=cancer['target'] )
+plt.xlabel('first pca')
+plt.ylabel('second pca')
+plt.show()  

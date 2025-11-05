@@ -129,7 +129,6 @@ y_pred = mnb.predict( X_test)
 
 
 
-
 accuracy = accuracy_score(y_pred , y_test)
 print(accuracy)
 print( confusion_matrix(y_pred ,y_test))
