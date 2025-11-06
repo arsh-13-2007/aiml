@@ -59,5 +59,5 @@ preprocessing = ColumnTransformer([
     ("numerical_featuer" , numerical_featuer , ["age" , "height"])
 ])
 
-pipe = make_pipeline(preprocessing ,SVC() )
+pipe = make_pipeline(preprocessing ,PCA(n_components=2), SVC() )
 print(pipe)
