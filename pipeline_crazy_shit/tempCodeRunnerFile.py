@@ -1,1 +1,6 @@
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42, stratify=y)
+y_pred = pipe.predict(X_test)
+
+# accuracy = accuracy_score(  y_test , y_pred )
+# precision = precision_score(y_test , y_pred )
+# print(accuracy)
+# print(precision)
