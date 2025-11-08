@@ -44,8 +44,10 @@ pipe = Pipeline([
     ('trf3' , trf3) ,
     ('model' , trf4)
 ])
-set_config(display='diagram')
-plt.show()
+
+# pipe.named_steps['trf1'].transformers_
+
+
 pipe.fit(X_train , y_train)
 y_pred = pipe.predict(X_test)
 

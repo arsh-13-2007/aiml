@@ -30,7 +30,7 @@ print( data_scaled.shape) # output (569, 30)
 
 print(pca.explained_variance_)
 
-plt.scatter(data_pca[:,0] , data_pca[: , 1 ], c=cancer['target'] )
+plt.scatter(data_pca[:,0] , data_pca[: , 1 ], c=cancer['target'])
 plt.xlabel('first pca')
 plt.ylabel('second pca')
 plt.show()  
