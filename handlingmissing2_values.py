@@ -22,5 +22,6 @@ trf = ColumnTransformer([
     ("imputing" , SimpleImputer(strategy='mean') , ['Age']) , 
     ('imputer' , SimpleImputer(strategy='most_frequent') , ['Cabin'])
 ],remainder='passthrough')
+# data['Age'] = data['Age'].fillna(data['Age'].mean())
 X_train = trf.fit_transform(X_train)
 print(X_train)

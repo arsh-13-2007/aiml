@@ -94,7 +94,6 @@ def transform_text( text):
 
     return " ".join(y)
 
-
 data['transform_text']=data['text'].apply(transform_text)
 wc = WordCloud(width= 500 ,height = 500 , min_font_size=10 , background_color='white')
 spam_wc = wc.generate(data[data['target']==1]['transform_text'].str.cat(sep=" "))

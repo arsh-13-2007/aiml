@@ -5,6 +5,9 @@ import seaborn as sns
 
 data = pd.read_csv("Titanic.csv")
 print( data.head ())
+print( data.isnull().sum())
+data['Age'] = data['Age'].fillna(data['Age'].median())
+print( data.isnull().sum())
 
 sns.countplot(x='Pclass', data=data)  # graph is use for categorical data
 plt.show()
@@ -15,3 +18,13 @@ value = data['Pclass'].value_counts().sort_index()
 plt.pie(value, labels=['one', 'two', 'third'], autopct="%0.2f")
 plt.show()
 
+
+# numerical data eda 
+
+plt.hist(data['Age'])
+plt.show()
+
+sns.distplot(data['Age'] )
+plt.show()
+sns.boxplot(data['Age'] )
+plt.show()
