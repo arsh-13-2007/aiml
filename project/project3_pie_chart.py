@@ -14,11 +14,13 @@ from sklearn.naive_bayes import GaussianNB , MultinomialNB , BernoulliNB
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import precision_score , accuracy_score , confusion_matrix
 from sklearn.preprocessing import LabelEncoder
+import streamlit as st
+import pickle
 
 data = pd.read_csv('spam_dataset.csv' ,encoding="latin1")
 print( data.head())
 print( data.shape)
-print(data.isnull().sum())
+print(data.isnull().sum()) 
 
 #     task
 # 1. data cleaning 
@@ -111,9 +113,9 @@ y = data['target'].values
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2,random_state=2 )
 
 
-gnb = GaussianNB()
+
 mnb = MultinomialNB()
-bnb = BernoulliNB()
+
 # gnb.fit(X_train , y_train)
 # y_pred = gnb.predict( X_test)
 
@@ -127,8 +129,11 @@ y_pred = mnb.predict( X_test)
 
 
 
-
 accuracy = accuracy_score(y_pred , y_test)
 print(accuracy)
 print( confusion_matrix(y_pred ,y_test))
 print( precision_score( y_pred , y_test))
+
+pickle.dump(mnb, open("model.pkl", 'wb'))
+pickle.dump(cv, open("vectorizer.pkl", 'wb'))
+

@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -39,17 +37,3 @@ plt.show()
 
 sns.boxplot(x='Pclass' , y='Age' ,data=data )   # using box we able to find average values of age and pclass 
 plt.show()
-
-
-def function ( cols):
-    Age = cols[0]
-    Pclass = cols[1]
-    if data.isnull(Age):
-        if Pclass == 1:
-            return  37 
-        elif Pclass == 2:
-            return 29
-        elif Pclass == 3:
-            return 24
-    else: 
-        return Age
