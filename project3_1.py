@@ -28,6 +28,8 @@ def transform_text( text):
 mnb = pickle.load(open("model.pkl", 'rb'))
 cv = pickle.load(open("vectorizer.pkl", 'rb'))
 
+
+
 st.title("Email.SMS spam classifier")
 
 input_sms = st.text_input("enter msg")
