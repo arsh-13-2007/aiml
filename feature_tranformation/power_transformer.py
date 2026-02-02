@@ -81,34 +81,3 @@ plt.subplot(122)
 stats.probplot(X_train['Fare'], plot=plt)
 plt.title("this is QQ plot")
 plt.show()
-
-
-"""                applying transformation on data to increase the accuracy of model"""
-
-
-trf = FunctionTransformer(func=np.log1p)
-
-X_train_transformed = trf.fit_transform(X_train)
-X_test_transformed = trf.transform(X_test)
-
-
-
-
-
-
-clf = LogisticRegression()
-clf2 = DecisionTreeClassifier()
-
-clf.fit( X_train_transformed , y_train)
-clf2.fit(X_train_transformed , y_train)
-
-y_pred = clf.predict(X_test_transformed)
-y_pred1 = clf2.predict(X_test_transformed)
-
-print("accuracy of LR:" , accuracy_score(y_test , y_pred))
-print("accuracy of DT:" , accuracy_score(y_test , y_pred1))
-
-
-
-
-
