@@ -52,7 +52,7 @@ print(X_train_new)
 X_train_new = pd.DataFrame(X_train_new)
 print(X_train_new)
 
-# apply same for test data 
+# apply same for test data
 
 X_test_cat = ohe.fit_transform(X_test[['fuel' , 'owner']]).toarray()
 X_test_num = X_test[['brand','km_driven']].values
